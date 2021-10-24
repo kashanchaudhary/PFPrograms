@@ -1,0 +1,73 @@
+//The program to calculate the Taylor Series for Sin(x) (y = x - x^3/3! + x^5/5! - x^7/7! + x^9/9!...x^n/n!)
+
+#include<stdio.h>
+int main()
+
+{
+
+//Declaring "num" for the number, "ter" for the number of terms, "i", "j", "k" for the "for loop", and "norp" for the Negative and Positive operation
+     int num=0, ter=0, i, j, k, factorial=1, norp=2;
+
+//Declaring "sum" for the whole operation and "a"0 for the operation
+     float sum=0, a=1;
+
+//Getting the user to enter the number
+
+      printf("Please enter the NUMBER = ");
+      scanf("%d",&num);
+
+//Getting the user to enter the number of terms
+
+      printf("\nPlease enter the NUMBER OF TERMS = ");
+      scanf("%d",&ter);
+
+//If the number of terms are EVEN then the program won't execute but if ODD then it will execute
+if (ter%2==1)
+
+{
+//Using the for loop for the main outer loop
+
+      for(i=1 ; i<=ter ; i+=2)
+        {
+//Using the for loop for the factorial
+          for(j=i; j>=1; j--)
+            {
+             factorial=factorial*j;
+            }
+
+//Using the for loop for the calculating the terms
+              for(k=0 ; k<i ; k++)
+                {
+                    a=a*num;
+                }
+
+
+                           //If Even then + sign will be used
+                           if(norp%2==0)
+                                {
+                                 sum = sum+(a/factorial);
+                                 norp++;
+                                }
+
+                           //If Odd then "-" sign will be used
+                           else if(norp%2==1)
+                                {
+                                 sum = sum-(a/factorial);
+                                 norp++;
+                                }
+
+            factorial=1;
+			a=1;
+
+         }
+
+printf("\n\n\nThe sum of the series with %d number and %d terms = %.2f\n\n\n\n\n\n",num, ter, sum);
+
+}
+
+else
+printf("\n\n\nThe value of the terms is INVALID, It must be ODD\n\n\n");
+
+  return 0;
+
+}
