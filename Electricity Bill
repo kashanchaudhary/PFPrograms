@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+float main()
+{
+
+    float units, bill, gttwohun, gtthreehun, gtsevhun, total;
+
+    printf("Enter the electricity units: ");
+    scanf("%f", &units);
+
+    //If units are less than 200
+
+    if (units<200) bill=units*5.12;
+
+    //If units are greater than 200 and less than 300
+
+    else if (units>200 && units<=300) gttwohun=units-200, bill=(200*5.12)+gttwohun*10.2;
+
+    //If units are greater than 300 and less than 700
+
+    else if (units>301 && units<=700) gtthreehun=units-300, bill=(200*5.12)+(100*10.2)+gtthreehun*15.45;
+
+    //If units are greater than 700
+
+    else if (units>700) gtsevhun=units-700, bill=(200*5.12)+(100*10.2)+(400*15.45)+gtsevhun*17.33;
+
+    //Total Bill calculation
+
+    total=bill+(0.17*bill)+15;
+
+    printf("The Total Bill is Rs. %f", total);
+
+
+    return 0;
+
+}
