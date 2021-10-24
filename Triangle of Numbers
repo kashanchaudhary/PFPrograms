@@ -1,0 +1,35 @@
+//The program to generate and print a triangle of numbers
+#include<stdio.h>
+
+int main()
+{
+    //Declaring two variables, one for the number and one for the size
+    int num, size;
+
+    //getting th user to input the values of the number and size
+
+    printf("Enter the size of the triangle = ");
+    scanf("%d", &size);
+
+    printf("Enter the starting value = ");
+    scanf("%d", &num);
+
+        //Putting the outer condition for the size
+            for (int a=1; a<=size; a++)
+        {
+        //Putting the outer condition for the number
+            for (int b=size; b>=a; b--)
+                {
+                    if (num>9)
+                    num=1;
+                    printf("%d ", num);
+                    num++;
+                }
+                    printf("\n");
+                }
+
+        return 0;
+
+
+
+}
